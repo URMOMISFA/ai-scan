@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Scan - What Are You Looking At?</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔍 AI Scan</h1>
+            <p class="subtitle">Discover what you're looking at with AI</p>
+        </header>
+
+        <div class="main-content">
+            <!-- API Key Input -->
+            <div class="api-section">
+                <div class="api-input-group">
+                    <input 
+                        type="password" 
+                        id="apiKey" 
+                        placeholder="Enter your OpenAI API Key"
+                        class="api-input"
+                    >
+                    <button id="saveApiKey" class="btn btn-secondary">Save API Key</button>
+                </div>
+                <p class="api-note">🔒 Your API key is stored locally in your browser</p>
+            </div>
+
+            <!-- Upload Section -->
+            <div class="upload-section">
+                <h2>Upload Image</h2>
+                <div class="upload-area" id="uploadArea">
+                    <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="17 8 12 3 7 8"></polyline>
+                        <line x1="12" y1="3" x2="12" y2="15"></line>
+                    </svg>
+                    <p>Drag and drop an image or click to select</p>
+                    <input 
+                        type="file" 
+                        id="uploadInput" 
+                        accept="image/*"
+                        class="file-input"
+                    >
+                </div>
+            </div>
+
+            <!-- Webcam Section -->
+            <div class="webcam-section">
+                <h2>Use Webcam</h2>
+                <div class="webcam-container">
+                    <video id="webcam" class="webcam-video"></video>
+                    <canvas id="canvas" class="hidden"></canvas>
+                </div>
+                <div class="webcam-controls">
+                    <button id="startWebcam" class="btn btn-primary">Start Webcam</button>
+                    <button id="stopWebcam" class="btn btn-secondary hidden">Stop Webcam</button>
+                    <button id="capturePhoto" class="btn btn-success hidden">Capture Photo</button>
+                </div>
+            </div>
+
+            <!-- Image Preview -->
+            <div id="previewSection" class="preview-section hidden">
+                <h2>Selected Image</h2>
+                <img id="preview" class="preview-image" alt="Preview">
+            </div>
+
+            <!-- Analysis Button -->
+            <button id="analyzeBtn" class="btn btn-primary btn-large hidden">
+                Analyze with AI
+            </button>
+
+            <!-- Loading State -->
+            <div id="loadingState" class="loading-state hidden">
+                <div class="spinner"></div>
+                <p>AI is analyzing your image...</p>
+            </div>
+
+            <!-- Results Section -->
+            <div id="resultsSection" class="results-section hidden">
+                <h2>AI Analysis</h2>
+                <div class="results-content">
+                    <div class="result-card">
+                        <h3>What You're Looking At</h3>
+                        <p id="analysisResult"></p>
+                    </div>
+                    <button id="resetBtn" class="btn btn-secondary">Analyze Another Image</button>
+                </div>
+            </div>
+
+            <!-- Error Section -->
+            <div id="errorSection" class="error-section hidden">
+                <p id="errorMessage"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
