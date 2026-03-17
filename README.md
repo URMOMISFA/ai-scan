@@ -24,3 +24,23 @@ An interactive web application that uses OpenAI's GPT-4 Vision API to analyze an
 ```bash
 git clone https://github.com/URMOMISFA/ai-scan.git
 cd ai-scan
+btw if you acctully want to use this
+Usage
+
+    Get an OpenAI API Key:
+        Go to https://platform.openai.com/api-keys
+        Create a new API key
+        Make sure your account has access to GPT-4 Vision models
+
+    Add Your API Key:
+        Paste your API key into the input field
+        Click "Save API Key"
+        Your key is stored locally in your browser
+
+    Analyze an Image:
+        Upload: Drag and drop an image or click to select
+        Webcam: Click "Start Webcam" and then "Capture Photo"
+        Click "Analyze with AI"
+        Wait for the AI analysis
+        View the detailed description
+
